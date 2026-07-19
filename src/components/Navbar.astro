@@ -1,0 +1,52 @@
+---
+import { MessageCircle } from 'lucide-react';
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold tracking-tight text-jesmac-blue">
+      JESMAC<span class="text-jesmac-lemon">.</span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-8">
+      <a href="/" class="text-sm font-medium text-slate-600 hover:text-jesmac-blue transition-colors">Home</a>
+      <a href="/shop" class="text-sm font-medium text-slate-600 hover:text-jesmac-blue transition-colors">Shop</a>
+      <a href="/shop" class="btn-primary text-sm">
+        <MessageCircle size={16} /> Order on WhatsApp
+      </a>
+    </div>
+
+    <button id="nav-toggle" class="md:hidden p-2 text-slate-700" aria-label="Toggle menu">
+      <svg id="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <svg id="icon-close" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-3">
+    <a href="/" class="block text-sm font-medium text-slate-700">Home</a>
+    <a href="/shop" class="block text-sm font-medium text-slate-700">Shop</a>
+    <a href="/shop" class="btn-primary w-full text-sm justify-center">
+      <MessageCircle size={16} /> Order on WhatsApp
+    </a>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+
+  btn?.addEventListener('click', () => {
+    const isHidden = menu?.classList.contains('hidden');
+    if (isHidden) {
+      menu?.classList.remove('hidden');
+      iconMenu?.classList.add('hidden');
+      iconClose?.classList.remove('hidden');
+    } else {
+      menu?.classList.add('hidden');
+      iconMenu?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    }
+  });
+</script>
