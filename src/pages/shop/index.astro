@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import OrderBuilder from '../../components/OrderBuilder.jsx';
+---
+
+<Layout title="Shop — Jesmac Liquid Soap">
+  <main class="pt-24 pb-40 bg-slate-50 min-h-screen">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <h1 class="text-4xl font-bold text-slate-900 mb-2">Store</h1>
+      <p class="text-slate-600 mb-10">
+        Select your items and send your order via WhatsApp. We will confirm and arrange delivery.
+      </p>
+    </div>
+    <OrderBuilder client:load />
+  </main>
+</Layout>
