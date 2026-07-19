@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jesmac-blue: #0066CC;
+  --color-jesmac-blue-dark: #004C99;
+  --color-jesmac-blue-light: #E6F0FA;
+  --color-jesmac-lemon: #FFD60A;
+  --color-jesmac-lemon-dark: #856D00;
+  --color-jesmac-teal: #00A896;
+  --color-jesmac-teal-dark: #007A6B;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-sans);
+    background-color: #f8fafc;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    background-color: var(--color-jesmac-blue);
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 102, 204, 0.25);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-jesmac-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 102, 204, 0.3);
+  }
+  .btn-lemon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    background-color: var(--color-jesmac-lemon);
+    color: var(--color-jesmac-lemon-dark);
+    box-shadow: 0 10px 15px -3px rgba(255, 214, 10, 0.25);
+  }
+  .btn-lemon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(255, 214, 10, 0.3);
+  }
+}
