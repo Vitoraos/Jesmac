@@ -2,7 +2,7 @@
 // CONFIG: Change prices & WhatsApp number here. Nothing else.
 // ═══════════════════════════════════════════════════════════════
 
-export const WHATSAPP_NUMBER = "2348000000000";
+export const WHATSAPP_NUMBER = "234 701 081 1770";
 
 export const PRODUCTS = {
   lemon: {
