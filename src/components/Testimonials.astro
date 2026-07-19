@@ -1,0 +1,32 @@
+---
+import { Star } from 'lucide-react';
+
+const reviews = [
+  { name: "Chioma O.", location: "Lagos", text: "I use it for everything — dishes, laundry, even washing my car. The lemon scent is strong and fresh. Best value for 75cl." },
+  { name: "Emeka T.", location: "Abuja", text: "The refill option is smart. I keep one bottle in the kitchen and one for laundry. Delivery was fast via WhatsApp." },
+  { name: "Amina K.", location: "Kano", text: "Finally a liquid soap that actually cuts grease on plates without needing a whole bottle. Green variant smells amazing." },
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center text-slate-900 mb-12">Trusted in Nigerian Homes</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {reviews.map((r) => (
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition-shadow">
+          <div class="flex gap-1 text-jesmac-lemon mb-4">
+            {[...Array(5)].map(() => <Star size={16} fill="currentColor" />)}
+          </div>
+          <p class="text-slate-700 mb-4 leading-relaxed">"{r.text}"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-jesmac-blue-light text-jesmac-blue flex items-center justify-center font-bold text-sm">{r.name[0]}</div>
+            <div>
+              <p class="text-sm font-bold text-slate-900">{r.name}</p>
+              <p class="text-xs text-slate-500">{r.location}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
