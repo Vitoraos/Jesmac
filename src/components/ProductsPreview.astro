@@ -1,0 +1,53 @@
+---
+import { ArrowRight } from 'lucide-react';
+import { PRODUCTS } from '../lib/data.js';
+
+const items = Object.values(PRODUCTS);
+---
+
+<section class="py-20 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">Pick Your Scent</h2>
+        <p class="text-slate-600">Two variants. One size. Serious clean.</p>
+      </div>
+      <a href="/shop" class="inline-flex items-center gap-2 text-jesmac-blue font-semibold hover:underline">
+        Go to Store <ArrowRight size={18} />
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {items.map((product) => (
+        <div class="group relative bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 hover:border-transparent hover:shadow-xl transition-all duration-300">
+          <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
+            style={`background: linear-gradient(135deg, ${product.accentHex} 0%, white 60%)`}>
+          </div>
+          <div class="flex items-start justify-between mb-6">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-3"
+                style={`background-color: ${product.accentHex}; color: ${product.color === 'lemon' ? '#856D00' : '#004D44'}`}>
+                {product.size}
+              </span>
+              <h3 class="text-2xl font-bold text-slate-900">{product.name}</h3>
+              <p class="text-slate-600 mt-1">{product.tagline}</p>
+            </div>
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl shadow-sm" style={`background-color: ${product.hex}`}>
+              <span class={product.color === 'lemon' ? 'text-yellow-900' : 'text-white'}>
+                {product.color === 'lemon' ? '🍋' : '🌿'}
+              </span>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">{product.description}</p>
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-2xl font-bold text-slate-900">₦{product.newBottlePrice.toLocaleString()}</span>
+              <span class="text-sm text-slate-500 ml-2">per bottle</span>
+            </div>
+            <a href="/shop" class="btn-primary text-sm">Buy Now</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
