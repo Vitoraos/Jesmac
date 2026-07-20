@@ -13,6 +13,13 @@ const { title = "Jesmac — Tough on Dirt" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content="Nigeria's powerful multi-purpose liquid soap. Plates, clothes, cars — one 75cl bottle handles every mess. Order on WhatsApp." />
+    
+    {/* OG / Social */}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Nigeria's powerful multi-purpose liquid soap. Order on WhatsApp." />
+    <meta property="og:image" content="/jesmac-logo.jpg" />
+    <meta property="og:type" content="website" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
